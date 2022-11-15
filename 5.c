@@ -1,54 +1,31 @@
 #include <stdio.h>
-
 int main()
 {
-    int vPar[5], vImpar[5];
-    int x, i, n, par = 0, imp = 0, contP = 0, contI = 0;
+    double soma = 0.0, matriz[12][12];
+    int linha, i, j;
+    char opera[2];
 
-    for (x = 0; x < 15; x++)
+    scanf("%d", &linha);
+    scanf("%s", &opera);
+
+    for (i = 0; i < 12; i++)
     {
-        scanf("%d", &n);
-
-        if ((n % 2) == 0)
+        for (j = 0; j < 12; j++)
         {
-            vPar[par] = n;
-            contP += 1;
-            par += 1;
-        }
-        if ((n % 2) != 0)
-        {
-            vImpar[imp] = n;
-            contI += 1;
-            imp += 1;
-        }
-
-        if (contP == 5)
-        {
-            for (i = 0; i < 5; i++)
+            scanf("%lf", &matriz[i][j]);
+            if (i == linha)
             {
-                printf("par[%d] = %d\n", i, vPar[i]);
-                par = 0;
-                contP = 0;
-            }
-        }
-        if (contI == 5)
-        {
-            for (i = 0; i < 5; i++)
-            {
-                printf("impar[%d] = %d\n", i, vImpar[i]);
-                imp = 0;
-                contI = 0;
+                soma += matriz[i][j];
             }
         }
     }
-
-    for (i = 0; i < contI; i++)
+    if (opera[0] == 'S')
     {
-        printf("impar[%d] = %d\n", i, vImpar[i]);
+        printf("%.1lf\n", soma);
     }
-    for (i = 0; i < contP; i++)
+    else if (opera[0] == 'M')
     {
-        printf("par[%d] = %d\n", i, vPar[i]);
+        printf("%.1lf\n", (soma/12.0));
     }
 
     return 0;

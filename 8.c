@@ -1,40 +1,21 @@
-#include <stdio.h>
-int main()
+int main ()
 {
-    double soma = 0.0, matriz[12][12];
-    int coluna, i, j, ini, fim, x=0;
-    char opera[2];
+    int a;
+    int b;
+    scanf("%d %d", &a, &b);
 
-    scanf("%d", &coluna);
-    scanf("%s", &opera);
-
-    for (i = 0; i < 12; i++)
+    while (a != b)
     {
-        for (j = 0; j < 12; j++)
-        {
-            scanf("%lf", &matriz[i][j]);
+        if (a > b){
+            printf("Decrescente");
+            scanf("%d %d", &a, &b);
         }
-    }
-
-    for (i = 7; i < 12; i++)
-    {
-        ini = 5 - x;
-        fim = 6 + x;
-        for (j = ini; j <= fim; j++)
+        if (a < b)
         {
-            soma += matriz[i][j];
+            printf("Crescente");
+            scanf("%d %d", &a, &b);
         }
-        x += 1;
+        
     }
-
-    if (opera[0] == 'S')
-    {
-        printf("%.1lf\n", soma);
-    }
-    else if (opera[0] == 'M')
-    {
-        printf("%.1lf\n", (soma / 12.0));
-    }
-
     return 0;
 }

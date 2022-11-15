@@ -2,24 +2,21 @@
 
 int main()
 {
-    int vet[20], aux;
-    int i, a;
+    double res, fib[60] = {0,1};
+    int i, repet, num;
 
-    for (i = 0; i <20 ; i++)
+    scanf("%d", &repet);
+
+    for (i = 2; i < 61; i++)
     {
-        scanf("%d", &vet[i]);
+        fib[i] = (fib[i-1])+(fib[i-2]);
     }
 
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < repet; i++)
     {
-        aux = vet[i];
-        vet[i] = vet[19-i];
-        vet[19-i] = aux;
-
-    }
-    for (i = 0; i < 20; i++)
-    {
-        printf("N[%d] = %d\n", i, vet[i]);
+        scanf("%d", &num);
+        res = fib[num];
+        printf("Fib(%d) = %.0f\n", num, res);
     }
     return 0;
 }
