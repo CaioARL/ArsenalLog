@@ -1,0 +1,1 @@
+Repositória para armazanar os exercícios do arsenal
