@@ -4,7 +4,7 @@ int main()
     int matriz[12][12];
     float somaLinha = 0.0, somaColuna = 0.0;
     int linha, coluna, i, j;
-    char opera[2];
+    char opera[2], sair[2];
 
     printf("\tMATRIZ COMPLETA\n\n");
 
@@ -18,7 +18,9 @@ int main()
         printf("\n");
     }
 
-    printf("linha escolhida:\n");
+    while (sair[0] != 's')
+    {
+        printf("linha escolhida:\n");
     scanf("%d", &linha);
     printf("coluna escolhida:\n");
     scanf("%d", &coluna);
@@ -38,5 +40,10 @@ int main()
     {
         printf("Media da linha: %.2f\nMedia da coluna: %.2f\n", somaLinha/12, somaColuna/12);
     }
+
+    printf("\n\tDeseja sair? (s = sim, n = nao)\n");
+    scanf("%s", &sair);
+    }
+
     return 0;
 }
